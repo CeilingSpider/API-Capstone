@@ -1,0 +1,67 @@
+body {
+    font-family: sans-serif;
+    background-color: skyblue;
+}
+
+h1, h2, h3, span {
+    margin: 0;
+}
+
+h1 {
+    font-size: 16rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+span {
+    font-size: 6rem;
+    font-weight: 600;
+}
+
+
+.container {
+    max-width: 550px;
+    height: 80vh;
+    border: 1.5px solid black;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 20% 80%;
+    text-align: center;
+    padding: 25px 5px;
+}
+
+.degrees {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    margin-left: 2rem;
+}
+
+.hide {
+    display: none;
+}
+
+img {
+    width: 80px;
+    filter: grayscale(100%);
+}
+a {
+    text-decoration: none;
+    color: darkviolet;
+}
+
+/** button styling **/
+
+button {
+    color: skyblue;
+    background: black;
+    border: none;
+    padding: 10px;
+
+}
