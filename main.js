@@ -1,25 +1,11 @@
 'use strict';
 
-/*send GET request
-
-const searchURL = 'https://api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid=7eb7224da37b5fb683efc4179f25c979';
-
-function getWeatherData (zipCode, callback) {
-    const query = {
-        q: `zipCode`,
-        api_key: '7eb7224da37b5fb683efc4179f25c979',
-
-    $.getJSON(zipCode, query, callback);
-
-    }
-}*/
-
 $(document).ready(function () {
     
-    // Get Location 
-    navigator.geolocation.getCurrentPosition(success, error);
+    // Get Location *
+    
 
-    function success(pos) {
+    const success = function(pos) {
         const lat = pos.coords.latitude;
         const long = pos.coords.longitude;
         weather(lat, long);
@@ -28,15 +14,36 @@ $(document).ready(function () {
 			function error() {
 					console.log('There was an error');
 			}
+    navigator.geolocation.getCurrentPosition(success, error);
 
-    // Call Weather
+
+        // Call Weather
     function weather(lat, long) {
         const URL = `https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${long}`;
 
         $.getJSON(URL, function(data) {
+            
             updateDOM(data);
         });
     }
+
+    // Temp responses that will appear below the desc
+
+    function buildMessageforUser(maxTemp) {
+
+        if (maxTemp < 0) return "Bundle up!";
+        
+        if (maxTemp < 9) return "Don't forget a jacket!";
+        
+        if (maxTemp < 19) return "You might not need that jacket today!";
+
+        if (maxTemp < 29) return "Make sure you're staying hyrdated out there!";
+
+        return "Maybe just stay inside today...";
+        
+
+    }
+
 
     // Update Dom
     function updateDOM(data) {
@@ -48,6 +55,10 @@ $(document).ready(function () {
         $('#city').html(city);
         $('#temp').html(temp);
         $('#desc').html(desc);
+        const message = buildMessageforUser();
+        $(`#response`).text(message);
         $('#icon').attr('src', icon);
     }
+
+
 });

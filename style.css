@@ -8,7 +8,7 @@ h1, h2, h3, span {
 }
 
 h1 {
-    font-size: 16rem;
+    font-size: 12rem;
 }
 
 h2 {
@@ -29,7 +29,8 @@ span {
     max-width: 550px;
     height: 80vh;
     border: 1.5px solid black;
-    margin: 0 auto;
+    border-radius: 25px;
+    margin: 25px;
     display: grid;
     grid-template-rows: 20% 80%;
     text-align: center;
@@ -49,14 +50,14 @@ span {
 
 img {
     width: 80px;
-    filter: grayscale(100%);
+    /**filter: grayscale(100%);**/
 }
 a {
     text-decoration: none;
     color: darkviolet;
 }
 
-/** button styling **/
+/** button styling, if needed **/
 
 button {
     color: skyblue;
@@ -65,3 +66,5 @@ button {
     padding: 10px;
 
 }
+
+/** Responsiveness **/
