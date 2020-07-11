@@ -35,6 +35,8 @@ span {
     grid-template-rows: 20% 80%;
     text-align: center;
     padding: 25px 5px;
+    background: url(nature-sky-clouds-blue-53594.jpg) no-repeat;
+    opacity: 0.5;
 }
 
 .degrees {
