@@ -37,7 +37,7 @@ $(document).ready(function () {
         
         if (maxTemp < 19) return "You might not need that jacket today!";
 
-        if (maxTemp < 29) return "Make sure you're staying hyrdated out there!";
+        if (maxTemp < 29) return "Stay hydrated!";
 
         return "Maybe just stay inside today...";
         

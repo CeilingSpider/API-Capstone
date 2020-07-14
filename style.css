@@ -1,8 +1,27 @@
-body {
-    font-family: sans-serif;
-    background-color: skyblue;
+* {
+    box-sizing: border-box;
 }
 
+body {
+    font-family: sans-serif;
+    background: gray url(rsz_1nature-sky-clouds-blue-5359402.png) no-repeat fixed center;
+}
+
+main {
+    text-align: center;
+    margin: auto;
+    padding: 20% 0;
+}
+
+.container {
+    margin: auto;
+    max-width: 350px;
+    display: inline-block;
+    text-align: center;
+    padding: 1rem;
+}
+
+/** Headers and text **/
 h1, h2, h3, span {
     margin: 0;
 }
@@ -25,20 +44,6 @@ span {
 }
 
 
-.container {
-    max-width: 550px;
-    height: 80vh;
-    border: 1.5px solid black;
-    border-radius: 25px;
-    margin: 25px;
-    display: grid;
-    grid-template-rows: 20% 80%;
-    text-align: center;
-    padding: 25px 5px;
-    background: url(nature-sky-clouds-blue-53594.jpg) no-repeat;
-    opacity: 0.5;
-}
-
 .degrees {
     display: grid;
     grid-template-columns: auto auto;
@@ -52,12 +57,8 @@ span {
 
 img {
     width: 80px;
-    /**filter: grayscale(100%);**/
 }
-a {
-    text-decoration: none;
-    color: darkviolet;
-}
+
 
 /** button styling, if needed **/
 
