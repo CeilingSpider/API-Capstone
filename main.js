@@ -17,7 +17,7 @@ $(document).ready(function () {
     navigator.geolocation.getCurrentPosition(success, error);
 
 
-        // Call Weather
+    // Call Weather
     function weather(lat, long) {
         const URL = `https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${long}`;
 
@@ -27,17 +27,19 @@ $(document).ready(function () {
         });
     }
 
+  
+          
     // Temp responses that will appear below the desc
 
     function buildMessageforUser(maxTemp) {
 
-        if (maxTemp < 0) return "Bundle up!";
+        if (maxTemp < 0) return "brrrrr";
         
-        if (maxTemp < 9) return "Don't forget a jacket!";
+        if (maxTemp < 9) return "not a great day to swim";
         
-        if (maxTemp < 19) return "You might not need that jacket today!";
+        if (maxTemp < 19) return "nice weather, eh?";
 
-        if (maxTemp < 29) return "Stay hydrated!";
+        if (maxTemp < 34) return "getting a bit warm";
 
         return "Maybe just stay inside today...";
         
@@ -48,7 +50,7 @@ $(document).ready(function () {
     // Update Dom
     function updateDOM(data) {
         let city = data.name;
-        let temp = Math.round(data.main.temp_max);
+        let temp = Math.round(data.main.temp_max * (9/5) + 32);
         let desc = data.weather[0].description;
         let icon = data.weather[0].icon;
 
