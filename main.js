@@ -33,15 +33,15 @@ $(document).ready(function () {
 
     function buildMessageforUser(maxTemp) {
 
-        if (maxTemp < 0) return "brrrrr";
+        if (maxTemp < 32) return "brrrrr";
         
-        if (maxTemp < 9) return "not a great day to swim";
+        if (maxTemp < 50) return "not a great day to swim";
         
-        if (maxTemp < 19) return "nice weather, eh?";
+        if (maxTemp < 72) return "nice weather, eh?";
 
-        if (maxTemp < 34) return "getting a bit warm";
+        if (maxTemp < 85) return "getting a bit warm";
 
-        return "Maybe just stay inside today...";
+        return "it's hot outside";
         
 
     }
