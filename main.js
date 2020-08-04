@@ -21,13 +21,10 @@ $(document).ready(function () {
     function weather(lat, long) {
         const URL = `https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${long}`;
 
-        $.getJSON(URL, function(data) {
-            
-            updateDOM(data);
-        });
+        $.getJSON(URL, updateDOM);
     }
 
-  
+  console.log(weather)
           
     // Temp responses that will appear below the desc
 
@@ -57,7 +54,7 @@ $(document).ready(function () {
         $('#city').html(city);
         $('#temp').html(temp);
         $('#desc').html(desc);
-        const message = buildMessageforUser();
+        const message = buildMessageforUser(temp);
         $(`#response`).text(message);
         $('#icon').attr('src', icon);
     }
